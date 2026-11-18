@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Note App</title>
+    <style>
+        body { font-family: sans-serif; max-width: 600px; margin: 2rem auto; padding: 0 1rem; }
+        .hidden { display: none; }
+        .card { border: 1px solid #ccc; padding: 1rem; margin-bottom: 1rem; border-radius: 5px; }
+        input, textarea { width: 100%; margin-bottom: 10px; padding: 8px; box-sizing: border-box; }
+        button { padding: 8px 16px; cursor: pointer; background: #007bff; color: white; border: none; border-radius: 3px;}
+        button:hover { background: #0056b3; }
+        .error { color: red; font-size: 0.9em; }
+        .note-item { border-bottom: 1px solid #eee; padding: 10px 0; display: flex; justify-content: space-between; }
+    </style>
+</head>
+<body>
+
+    <h2>Secure Note App</h2>
+
+    <!-- AUTH SECTION -->
+    <div id="auth-section">
+        <div class="card">
+            <h3>Login / Register</h3>
+            <input type="text" id="username" placeholder="Username">
+            <input type="password" id="password" placeholder="Password">
+            
+            <!-- Only used for registration -->
+            <input type="text" id="interests" placeholder="Interests (comma separated, e.g. hiking, reading)">
+            
+            <button onclick="login()">Login</button>
+            <button onclick="register()">Register</button>
+        </div>
+        <p id="auth-msg" class="error"></p>
+    </div>
+
+    <!-- NOTES SECTION (Hidden until login) -->
+    <div id="notes-section" class="hidden">
+        <div class="card">
+            <h3>Your Notes</h3>
+            <button onclick="logout()" style="background: #dc3545; float: right;">Logout</button>
+            <div style="clear:both;"></div>
+            
+            <br>
+            <!-- Create Note -->
+            <input type="text" id="note-title" placeholder="Note Title">
+            <textarea id="note-content" placeholder="Note Content"></textarea>
+            <button onclick="createNote()">Add Note</button>
+
+            <!-- List Notes -->
+            <div id="notes-list" style="margin-top: 20px;"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
