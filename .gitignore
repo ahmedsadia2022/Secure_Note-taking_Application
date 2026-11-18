@@ -1,3 +1,4 @@
-PORT=5003
-MONGO_URI=mongodb+srv://sadia355_db_user:Gn8r_8itsQjw5G@cluster0.d6zxde6.mongodb.net/noteapp?retryWrites=true&w=majority&appName=Cluster0
-JWT_SECRET=your_secret_key
+node_modules/
+.env
+dist/
+build/
